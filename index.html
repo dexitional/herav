@@ -1,0 +1,563 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>heravote.com - Secure Online Voting Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#3B82F6',
+                        'primary-dark': '#1D4ED8',
+                        'secondary': '#64748B',
+                        'accent': '#10B981',
+                        'dark': '#1E293B',
+                        'dark-light': '#475569',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-lg">
+        <nav class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+            <div class="flex items-center gap-2 text-2xl font-bold text-primary">
+                <i class="fas fa-vote-yea text-3xl"></i>
+                <span>heravote.com</span>
+            </div>
+            <ul class="hidden md:flex list-none gap-8">
+                <li><a href="#features" class="text-secondary hover:text-primary transition-colors font-medium">Features</a></li>
+                <li><a href="#testimonials" class="text-secondary hover:text-primary transition-colors font-medium">Testimonials</a></li>
+                <li><a href="#how-it-works" class="text-secondary hover:text-primary transition-colors font-medium">How It Works</a></li>
+                <li><a href="#security" class="text-secondary hover:text-primary transition-colors font-medium">Security</a></li>
+                <li><a href="#pricing" class="text-secondary hover:text-primary transition-colors font-medium">Pricing</a></li>
+                <li><a href="#contact" class="text-secondary hover:text-primary transition-colors font-medium">Contact</a></li>
+            </ul>
+            <div class="md:hidden flex flex-col cursor-pointer nav-toggle">
+                <span class="w-6 h-0.5 bg-primary mb-1 transition-all"></span>
+                <span class="w-6 h-0.5 bg-primary mb-1 transition-all"></span>
+                <span class="w-6 h-0.5 bg-primary transition-all"></span>
+            </div>
+        </nav>
+        <!-- Mobile Menu -->
+        <div class="md:hidden nav-menu hidden bg-white shadow-lg">
+            <div class="flex flex-col py-4 px-8 space-y-4">
+                <a href="#features" class="text-secondary hover:text-primary transition-colors font-medium">Features</a>
+                <a href="#testimonials" class="text-secondary hover:text-primary transition-colors font-medium">Testimonials</a>
+                <a href="#how-it-works" class="text-secondary hover:text-primary transition-colors font-medium">How It Works</a>
+                <a href="#security" class="text-secondary hover:text-primary transition-colors font-medium">Security</a>
+                <a href="#pricing" class="text-secondary hover:text-primary transition-colors font-medium">Pricing</a>
+                <a href="#contact" class="text-secondary hover:text-primary transition-colors font-medium">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="min-h-[70vh] relative flex items-center pt-20 overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-900/90 to-slate-900/90 z-10"></div>
+        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('https://images.unsplash.com/photo-1522071901873-411886a10004?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');"></div>
+        
+        <!-- Content -->
+        <div class="relative z-20 w-full">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="text-center lg:text-left">
+                <h1 class="text-2xl lg:text-6xl font-bold text-white mb-6 leading-tight">Secure, Transparent, and Accessible Online Voting</h1>
+                <p class="text-lg lg:text-xl text-gray-200 mb-8 leading-relaxed">Transform your elections with our cutting-edge blockchain-powered voting platform. Ensuring integrity, accessibility, and trust in every vote.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <button class="bg-gradient-to-r from-primary to-primary-dark text-white px-8 py-3 rounded-lg font-medium hover:shadow-lg hover:-translate-y-1 transition-all duration-300">Start Free Trial</button>
+<button id="watch-demo" class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-medium hover:bg-white hover:text-primary transition-all duration-300">
+                        <i class="fab fa-youtube mr-2"></i>Watch Demo
+                    </button>
+                </div>
+            </div>
+            <div class="flex justify-center items-center">
+                <div class="flex flex-nowrap gap-4 justify-center overflow-x-auto pb-6 sm:pb-0">
+                    <div class="bg-white p-4 sm:p-8 rounded-3xl shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                        <i class="fas fa-laptop text-3xl sm:text-6xl text-primary"></i>
+                    </div>
+                    <div class="bg-white p-4 sm:p-8 rounded-3xl shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                        <i class="fas fa-mobile-alt text-3xl sm:text-6xl text-primary"></i>
+                    </div>
+                    <div class="bg-white p-4 sm:p-8 rounded-3xl shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                        <i class="fas fa-shield-alt text-3xl sm:text-6xl text-primary"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-2xl lg:text-4xl font-bold text-center text-dark mb-12">Why Choose heravote.com?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="text-center p-8 bg-slate-50 rounded-xl border border-slate-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                    <i class="fas fa-shield-alt text-5xl text-primary mb-4"></i>
+                    <h3 class="text-xl font-semibold text-dark mb-4">Blockchain Security</h3>
+                    <p class="text-secondary leading-relaxed">Immutable records and cryptographic verification ensure every vote is secure and tamper-proof.</p>
+                </div>
+                <div class="text-center p-8 bg-slate-50 rounded-xl border border-slate-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                    <i class="fas fa-eye text-5xl text-primary mb-4"></i>
+                    <h3 class="text-xl font-semibold text-dark mb-4">Full Transparency</h3>
+                    <p class="text-secondary leading-relaxed">Real-time audit trails and public verification systems maintain complete electoral transparency.</p>
+                </div>
+                <div class="text-center p-8 bg-slate-50 rounded-xl border border-slate-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                    <i class="fas fa-mobile-alt text-5xl text-primary mb-4"></i>
+                    <h3 class="text-xl font-semibold text-dark mb-4">Mobile Accessible</h3>
+                    <p class="text-secondary leading-relaxed">Vote from anywhere using any device with our responsive, user-friendly interface.</p>
+                </div>
+                <div class="text-center p-8 bg-slate-50 rounded-xl border border-slate-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                    <i class="fas fa-clock text-5xl text-primary mb-4"></i>
+                    <h3 class="text-xl font-semibold text-dark mb-4">Instant Results</h3>
+                    <p class="text-secondary leading-relaxed">Get real-time vote counting and immediate results as soon as polls close.</p>
+                </div>
+                <div class="text-center p-8 bg-slate-50 rounded-xl border border-slate-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                    <i class="fas fa-users text-5xl text-primary mb-4"></i>
+                    <h3 class="text-xl font-semibold text-dark mb-4">Voter Verification</h3>
+                    <p class="text-secondary leading-relaxed">Advanced identity verification prevents fraud while maintaining voter privacy.</p>
+                </div>
+                <div class="text-center p-8 bg-slate-50 rounded-xl border border-slate-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                    <i class="fas fa-chart-line text-5xl text-primary mb-4"></i>
+                    <h3 class="text-xl font-semibold text-dark mb-4">Analytics Dashboard</h3>
+                    <p class="text-secondary leading-relaxed">Comprehensive reporting and analytics to track engagement and participation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Section -->
+    <section class="py-16 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-2xl lg:text-3xl font-bold text-center text-dark mb-4">Trusted by Leading Organizations</h2>
+            <p class="text-center text-secondary mb-12 max-w-2xl mx-auto">Join thousands of organizations worldwide who trust heravote.com for secure, transparent elections</p>
+            
+            <!-- Client Logos -->
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center">
+                <div class="flex items-center justify-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                    <div class="text-2xl font-bold text-blue-600">Microsoft</div>
+                </div>
+                <div class="flex items-center justify-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                    <div class="text-2xl font-bold text-red-500">Google</div>
+                </div>
+                <div class="flex items-center justify-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                    <div class="text-2xl font-bold text-blue-500">IBM</div>
+                </div>
+                <div class="flex items-center justify-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                    <div class="text-2xl font-bold text-orange-500">Amazon</div>
+                </div>
+                <div class="flex items-center justify-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                    <div class="text-2xl font-bold text-blue-700">Meta</div>
+                </div>
+                <div class="flex items-center justify-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                    <div class="text-2xl font-bold text-green-600">NVIDIA</div>
+                </div>
+                <div class="flex items-center justify-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                    <div class="text-2xl font-bold text-purple-600">Tesla</div>
+                </div>
+                <div class="flex items-center justify-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                    <div class="text-2xl font-bold text-blue-600">Netflix</div>
+                </div>
+                <div class="flex items-center justify-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                    <div class="text-2xl font-bold text-black">Apple</div>
+                </div>
+                <div class="flex items-center justify-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                    <div class="text-2xl font-bold text-indigo-600">Salesforce</div>
+                </div>
+                <div class="flex items-center justify-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                    <div class="text-2xl font-bold text-red-600">Oracle</div>
+                </div>
+                <div class="flex items-center justify-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                    <div class="text-2xl font-bold text-blue-800">Intel</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-2xl lg:text-4xl font-bold text-center text-dark mb-4">What Our Clients Say</h2>
+            <p class="text-center text-secondary mb-16 max-w-2xl mx-auto">Hear from organizations that have transformed their voting processes with heravote.com</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-slate-50 p-8 rounded-xl border border-slate-200 hover:shadow-lg transition-shadow">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400 text-xl">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <blockquote class="text-secondary mb-6 italic leading-relaxed">
+                        "heravote.com revolutionized our corporate board elections. The transparency and security features gave all stakeholders complete confidence in the process. Implementation was seamless and the results were instant."
+                    </blockquote>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center text-white font-bold">
+                            SM
+                        </div>
+                        <div class="ml-4">
+                            <div class="font-semibold text-dark">Sarah Mitchell</div>
+                            <div class="text-sm text-secondary">Chief Technology Officer, TechCorp</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-slate-50 p-8 rounded-xl border border-slate-200 hover:shadow-lg transition-shadow">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400 text-xl">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <blockquote class="text-secondary mb-6 italic leading-relaxed">
+                        "We've conducted over 50 elections using heravote.com for our student government. The platform's reliability and user-friendly interface made voting accessible to our entire student body. Highly recommended!"
+                    </blockquote>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center text-white font-bold">
+                            MR
+                        </div>
+                        <div class="ml-4">
+                            <div class="font-semibold text-dark">Michael Rodriguez</div>
+                            <div class="text-sm text-secondary">Student Body President, State University</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-slate-50 p-8 rounded-xl border border-slate-200 hover:shadow-lg transition-shadow">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400 text-xl">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <blockquote class="text-secondary mb-6 italic leading-relaxed">
+                        "The blockchain security and audit trail capabilities of heravote.com exceeded our expectations. Our members felt completely secure voting online, and the detailed analytics helped us improve engagement."
+                    </blockquote>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold">
+                            EJ
+                        </div>
+                        <div class="ml-4">
+                            <div class="font-semibold text-dark">Emily Johnson</div>
+                            <div class="text-sm text-secondary">Executive Director, Professional Association</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 4 -->
+                <div class="bg-slate-50 p-8 rounded-xl border border-slate-200 hover:shadow-lg transition-shadow">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400 text-xl">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <blockquote class="text-secondary mb-6 italic leading-relaxed">
+                        "Outstanding platform! The mobile accessibility was crucial for our global workforce. Employees across different time zones could vote securely and conveniently. The customer support team was exceptional."
+                    </blockquote>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gradient-to-r from-red-500 to-red-600 rounded-full flex items-center justify-center text-white font-bold">
+                            DL
+                        </div>
+                        <div class="ml-4">
+                            <div class="font-semibold text-dark">David Lee</div>
+                            <div class="text-sm text-secondary">HR Director, Global Innovations Inc.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 5 -->
+                <div class="bg-slate-50 p-8 rounded-xl border border-slate-200 hover:shadow-lg transition-shadow">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400 text-xl">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <blockquote class="text-secondary mb-6 italic leading-relaxed">
+                        "heravote.com made our annual board elections completely paperless and transparent. The real-time results and comprehensive reporting saved us countless hours of manual counting and verification."
+                    </blockquote>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gradient-to-r from-indigo-500 to-indigo-600 rounded-full flex items-center justify-center text-white font-bold">
+                            AC
+                        </div>
+                        <div class="ml-4">
+                            <div class="font-semibold text-dark">Amanda Chen</div>
+                            <div class="text-sm text-secondary">Board Secretary, Non-Profit Foundation</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 6 -->
+                <div class="bg-slate-50 p-8 rounded-xl border border-slate-200 hover:shadow-lg transition-shadow">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400 text-xl">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <blockquote class="text-secondary mb-6 italic leading-relaxed">
+                        "The platform's scalability impressed us. We went from 100 to 10,000 voters seamlessly. The voter verification system is robust, and the blockchain technology gives us complete audit capability."
+                    </blockquote>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gradient-to-r from-teal-500 to-teal-600 rounded-full flex items-center justify-center text-white font-bold">
+                            JT
+                        </div>
+                        <div class="ml-4">
+                            <div class="font-semibold text-dark">James Thompson</div>
+                            <div class="text-sm text-secondary">Election Commissioner, Trade Union</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-2xl lg:text-4xl font-bold text-center text-dark mb-12">How It Works</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="flex items-start gap-4 p-6 bg-white rounded-xl shadow-sm">
+                    <div class="bg-gradient-to-r from-primary to-primary-dark text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">
+                        1
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-dark mb-2">Setup Election</h3>
+                        <p class="text-secondary leading-relaxed">Create your election, add candidates, and configure voting parameters through our intuitive dashboard.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4 p-6 bg-white rounded-xl shadow-sm">
+                    <div class="bg-gradient-to-r from-primary to-primary-dark text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">
+                        2
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-dark mb-2">Invite Voters</h3>
+                        <p class="text-secondary leading-relaxed">Send secure invitations to eligible voters with unique authentication codes.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4 p-6 bg-white rounded-xl shadow-sm">
+                    <div class="bg-gradient-to-r from-primary to-primary-dark text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">
+                        3
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-dark mb-2">Cast Votes</h3>
+                        <p class="text-secondary leading-relaxed">Voters securely cast their ballots using any device with end-to-end encryption.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4 p-6 bg-white rounded-xl shadow-sm">
+                    <div class="bg-gradient-to-r from-primary to-primary-dark text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">
+                        4
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-dark mb-2">View Results</h3>
+                        <p class="text-secondary leading-relaxed">Access real-time results and comprehensive analytics as votes are counted automatically.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security Section -->
+    <section id="security" class="py-20 bg-gradient-to-br from-dark to-dark-light text-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-2xl lg:text-4xl font-bold mb-6">Military-Grade Security</h2>
+                    <p class="text-lg mb-8 opacity-90 leading-relaxed">Our platform uses advanced cryptographic techniques and blockchain technology to ensure the highest level of security for your elections.</p>
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-4 text-lg">
+                            <i class="fas fa-check text-accent text-xl"></i>
+                            <span>End-to-end encryption</span>
+                        </li>
+                        <li class="flex items-center gap-4 text-lg">
+                            <i class="fas fa-check text-accent text-xl"></i>
+                            <span>Blockchain immutability</span>
+                        </li>
+                        <li class="flex items-center gap-4 text-lg">
+                            <i class="fas fa-check text-accent text-xl"></i>
+                            <span>Multi-factor authentication</span>
+                        </li>
+                        <li class="flex items-center gap-4 text-lg">
+                            <i class="fas fa-check text-accent text-xl"></i>
+                            <span>Zero-knowledge proofs</span>
+                        </li>
+                        <li class="flex items-center gap-4 text-lg">
+                            <i class="fas fa-check text-accent text-xl"></i>
+                            <span>SOC 2 Type II compliance</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="flex justify-center">
+                    <div class="bg-white/10 backdrop-blur-sm rounded-full w-48 h-48 flex items-center justify-center">
+                        <i class="fas fa-lock text-8xl text-accent"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-2xl lg:text-4xl font-bold text-center text-dark mb-12">Simple, Transparent Pricing</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="bg-white border-2 border-slate-200 rounded-xl p-8 text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                    <h3 class="text-2xl font-semibold text-dark mb-4">Starter</h3>
+                    <div class="text-5xl font-bold text-primary mb-8">
+                        $99<span class="text-lg text-secondary">/election</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="text-secondary py-2 border-b border-slate-100">Up to 500 voters</li>
+                        <li class="text-secondary py-2 border-b border-slate-100">Basic security features</li>
+                        <li class="text-secondary py-2 border-b border-slate-100">Email support</li>
+                        <li class="text-secondary py-2">Standard reporting</li>
+                    </ul>
+                    <button class="w-full bg-transparent border-2 border-slate-200 text-secondary px-6 py-3 rounded-lg font-medium hover:bg-slate-50 hover:border-primary hover:text-primary transition-all duration-300">
+                        Get Started
+                    </button>
+                </div>
+                <div class="bg-white border-2 border-primary rounded-xl p-8 text-center transform scale-105 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <h3 class="text-2xl font-semibold text-dark mb-4">Professional</h3>
+                    <div class="text-5xl font-bold text-primary mb-8">
+                        $299<span class="text-lg text-secondary">/election</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="text-secondary py-2 border-b border-slate-100">Up to 5,000 voters</li>
+                        <li class="text-secondary py-2 border-b border-slate-100">Advanced security</li>
+                        <li class="text-secondary py-2 border-b border-slate-100">Priority support</li>
+                        <li class="text-secondary py-2 border-b border-slate-100">Custom branding</li>
+                        <li class="text-secondary py-2">Advanced analytics</li>
+                    </ul>
+                    <button class="w-full bg-gradient-to-r from-primary to-primary-dark text-white px-6 py-3 rounded-lg font-medium hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                        Most Popular
+                    </button>
+                </div>
+                <div class="bg-white border-2 border-slate-200 rounded-xl p-8 text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                    <h3 class="text-2xl font-semibold text-dark mb-4">Enterprise</h3>
+                    <div class="text-5xl font-bold text-primary mb-8">Custom</div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="text-secondary py-2 border-b border-slate-100">Unlimited voters</li>
+                        <li class="text-secondary py-2 border-b border-slate-100">White-label solution</li>
+                        <li class="text-secondary py-2 border-b border-slate-100">24/7 dedicated support</li>
+                        <li class="text-secondary py-2 border-b border-slate-100">Custom integrations</li>
+                        <li class="text-secondary py-2">On-premise deployment</li>
+                    </ul>
+                    <button class="w-full bg-transparent border-2 border-slate-200 text-secondary px-6 py-3 rounded-lg font-medium hover:bg-slate-50 hover:border-primary hover:text-primary transition-all duration-300">
+                        Contact Sales
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-slate-50">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="text-2xl lg:text-4xl font-bold text-center text-dark mb-4">Ready to Get Started?</h2>
+            <p class="text-center text-lg text-secondary mb-12">Join thousands of organizations that trust heravote.com for their elections</p>
+            <div class="max-w-2xl mx-auto">
+                <form id="contactForm" class="space-y-6">
+                    <div>
+                        <input type="text" id="name" placeholder="Your Name" required 
+                               class="w-full px-4 py-3 border-2 border-slate-200 rounded-lg focus:outline-none focus:border-primary transition-colors">
+                    </div>
+                    <div>
+                        <input type="email" id="email" placeholder="Your Email" required 
+                               class="w-full px-4 py-3 border-2 border-slate-200 rounded-lg focus:outline-none focus:border-primary transition-colors">
+                    </div>
+                    <div>
+                        <input type="text" id="organization" placeholder="Organization" required 
+                               class="w-full px-4 py-3 border-2 border-slate-200 rounded-lg focus:outline-none focus:border-primary transition-colors">
+                    </div>
+                    <div>
+                        <textarea id="message" placeholder="Tell us about your voting needs" rows="4" required 
+                                  class="w-full px-4 py-3 border-2 border-slate-200 rounded-lg focus:outline-none focus:border-primary transition-colors resize-y"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-gradient-to-r from-primary to-primary-dark text-white px-8 py-4 rounded-lg font-medium hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                        Request Demo
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-8">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+                <div class="flex items-center gap-2 text-xl font-bold mb-4 md:mb-0">
+                    <i class="fas fa-vote-yea text-primary"></i>
+                    <span>heravote.com</span>
+                </div>
+                <div class="flex gap-8 mb-4 md:mb-0">
+                    <a href="#privacy" class="text-slate-400 hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#terms" class="text-slate-400 hover:text-white transition-colors">Terms of Service</a>
+                    <a href="#support" class="text-slate-400 hover:text-white transition-colors">Support</a>
+                </div>
+                <div class="flex gap-4">
+                    <a href="#" class="text-slate-400 hover:text-primary transition-colors text-xl">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-slate-400 hover:text-primary transition-colors text-xl">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="#" class="text-slate-400 hover:text-primary transition-colors text-xl">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="text-center pt-8 border-t border-slate-700">
+                <p class="text-slate-400">&copy; 2025 heravote.com. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Structure -->
+    <div id="video-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden justify-center items-center z-50 p-4">
+        <div class="bg-white rounded-lg overflow-hidden shadow-lg max-w-4xl w-full mx-4">
+            <div class="flex justify-between items-center p-4 border-b">
+                <h3 class="text-xl font-semibold text-dark">Watch Demo</h3>
+                <button id="close-modal" class="text-dark text-2xl hover:text-primary transition-colors">&times;</button>
+            </div>
+            <div class="relative pb-9/16">
+                <iframe id="video-frame" class="w-full h-96 md:h-[450px]" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
